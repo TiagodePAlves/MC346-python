@@ -7,10 +7,10 @@ DOCS_DIR := docs
 HTML_BUILD := $(DOCS_DIR)/_build/html
 
 CURRENT_BRANCH := $(shell git branch | grep \* | cut -d ' ' -f2)
+HTML_TMP := html
 
 
-
-.PHONY: run doc doc_server docs clean
+.PHONY: run doc doc_server docs clean publish_docs check $(HTML_TMP)
 
 run: $(SRC_DIR)
 	@$(PYTHON) -m $<
@@ -24,14 +24,15 @@ doc_server: docs
 check: $(SRC_DIR)
 	@$(MYPY) $<
 
-publish_docs: docs
-	@cp -r $(HTML_BUILD) html
-	@touch html/.nojekill
+$(HTML_TMP): docs
+	@cp -r $(HTML_BUILD) $(HTML_TMP)
+	@touch $(HTML_TMP)/.nojekill
+
+publish_docs:
 	@git checkout gh-pages
-	@find -maxdepth 1 \( ! -name ".*" ! -name 'html' ! -name 'LICENSE' \) -exec rm -rf "{}" \;
-	@mv html/* .
-	@mv html/.* .
-	@rmdir html
+	@find -maxdepth 1 \( ! -name ".*" ! -name '$(HTML_TMP)' ! -name 'LICENSE' \) -exec rm -rf "{}" \;
+	@mv $(shell find $(HTML_TMP) -maxdepth 1 -name ! '$(HTML_TMP)') .
+	@rmdir $(HTML_TMP)
 	@git add .
 	@git commit
 	@git push origin gh-pages
