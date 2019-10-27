@@ -34,9 +34,9 @@ publish_docs: $(HTML_TMP)
 	@mv $(shell find $(HTML_TMP) -maxdepth 1 ! -name '$(HTML_TMP)') .
 	@rmdir $(HTML_TMP)
 	@git add .
-	# @git commit
-	# @git push origin gh-pages
-	# @git checkout $(CURRENT_BRANCH)
+	@git commit
+	@git push origin gh-pages
+	@git checkout $(CURRENT_BRANCH)
 
 clean:
 	@make -C $(DOCS_DIR) clean
