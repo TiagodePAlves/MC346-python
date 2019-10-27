@@ -28,7 +28,7 @@ $(HTML_TMP): docs
 	cp -r $(HTML_BUILD) .
 	touch $(HTML_TMP)/.nojekill
 
-publish_docs:
+publish_docs: $(HTML_TMP)
 	@git checkout gh-pages
 	@find -maxdepth 1 \( ! -name ".*" ! -name '$(HTML_TMP)' ! -name 'LICENSE' \) -exec rm -rf "{}" \;
 	@mv $(shell find $(HTML_TMP) -maxdepth 1 ! -name '$(HTML_TMP)') .
