@@ -26,17 +26,17 @@ check: $(SRC_DIR)
 
 $(HTML_TMP): docs
 	cp -r $(HTML_BUILD) .
-	touch $(HTML_TMP)/.nojekill
+	touch $(HTML_TMP)/.nojekyll
 
 publish_docs: $(HTML_TMP)
 	@git checkout gh-pages
-	@find -maxdepth 1 \( ! -name ".*" ! -name '$(HTML_TMP)' ! -name 'LICENSE' \) -exec rm -rf "{}" \;
+	@find -maxdepth 1 \( ! -name '.*' ! -name '$(HTML_TMP)' ! -name 'LICENSE' \) -exec rm -rf "{}" \;
 	@mv $(shell find $(HTML_TMP) -maxdepth 1 ! -name '$(HTML_TMP)') .
 	@rmdir $(HTML_TMP)
 	@git add .
-	@git commit
-	@git push origin gh-pages
-	@git checkout $(CURRENT_BRANCH)
+	# @git commit
+	# @git push origin gh-pages
+	# @git checkout $(CURRENT_BRANCH)
 
 clean:
 	@make -C $(DOCS_DIR) clean
