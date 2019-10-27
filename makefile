@@ -31,7 +31,7 @@ $(HTML_TMP): docs
 publish_docs:
 	@git checkout gh-pages
 	@find -maxdepth 1 \( ! -name ".*" ! -name '$(HTML_TMP)' ! -name 'LICENSE' \) -exec rm -rf "{}" \;
-	@mv $(shell find $(HTML_TMP) -maxdepth 1 -name ! '$(HTML_TMP)') .
+	@mv $(shell find $(HTML_TMP) -maxdepth 1 ! -name '$(HTML_TMP)') .
 	@rmdir $(HTML_TMP)
 	@git add .
 	@git commit
