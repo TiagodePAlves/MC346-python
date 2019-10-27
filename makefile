@@ -25,8 +25,8 @@ check: $(SRC_DIR)
 	@$(MYPY) $<
 
 $(HTML_TMP): docs
-	@cp -r $(HTML_BUILD) $(HTML_TMP)
-	@touch $(HTML_TMP)/.nojekill
+	cp -r $(HTML_BUILD) .
+	touch $(HTML_TMP)/.nojekill
 
 publish_docs:
 	@git checkout gh-pages
