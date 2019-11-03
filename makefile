@@ -21,8 +21,8 @@ docs:
 doc_server: docs
 	@http-server $(HTML_BUILD)
 
-check: $(SRC_DIR)
-	@$(MYPY) $<
+typecheck: $(SRC_DIR)
+	@$(MYPY) --strict $<
 
 $(HTML_TMP): docs
 	cp -r $(HTML_BUILD) .
