@@ -15,28 +15,32 @@ __all__ = ["Comparable", "Orderable", "Additive", "Literal"]
 C = TypeVar('C', bound='Comparable')
 
 class Comparable(Protocol):
-    def __eq__(self: C, other: C) -> bool: ...
+    def __eq__(self: C, other: C) -> bool:
+        ...
 
 
-O = TypeVar('O', bound='Orderable')
+class Keyable(Comparable, Hashable, Protocol):
+    ...
+
+
+Ord = TypeVar('Ord', bound='Orderable')
 
 @total_ordering
 class Orderable(Comparable, Protocol):
-    def __lt__(self: O, other: O) -> bool: ...
+    def __lt__(self: Ord, other: Ord) -> bool:
+        ...
 
-    def __le__(self: O, other: O) -> bool:
+    def __le__(self: Ord, other: Ord) -> bool:
         return self < other or self == other
-
-
-class Keyable(Orderable, Hashable, Protocol): ...
 
 
 A = TypeVar('A', bound='Additive')
 
 class Additive(Orderable, Protocol):
-    @classmethod
-    def __zero__(cls) -> A: ...
+    def __add__(self: A, other: A) -> A:
+        ...
 
-    def __add__(self: A, other: A) -> A: ...
 
-    def __sub__(self: A, other: A) -> A: ...
+class Weightable(Additive, Protocol):
+    def is_inf(self) -> bool:
+        ...
