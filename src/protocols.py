@@ -24,9 +24,8 @@ C = TypeVar('C', bound='Comparable')
 
 class Comparable(Protocol):
     """Protocolo de classes que cujas instâncias são comparáveis"""
-    __slots__: List[str] = []
 
-    def __eq__(self: C, other: C) -> bool: # type: ignore
+    def __eq__(self: C, other: C) -> bool:
         """operadores ``==`` e ``!=``"""
         ...
 
@@ -35,7 +34,6 @@ class Keyable(Comparable, Hashable, Protocol):
     """Classes que podem ser chaves, isto é, são comparáveis e podem
     ser geradas `hashs` a partir de suas instâncias
     """
-    __slots__: List[str] = []
     ...
 
 
@@ -44,7 +42,6 @@ Ord = TypeVar('Ord', bound='Orderable')
 
 class Orderable(Comparable, Protocol):
     """Protocolo para tipos ordenáveis por ordenação total"""
-    __slots__: List[str] = []
 
     def __lt__(self: Ord, other: Ord) -> bool:
         """operador ``<``"""
@@ -68,7 +65,6 @@ A = TypeVar('A', bound='Additive')
 
 class Additive(Orderable, Protocol):
     """Tipos com adição definida, além de serem ordenáveis"""
-    __slots__: List[str] = []
 
     def __add__(self: A, other: A) -> A:
         """operadores ``+`` e ``+=``"""
@@ -77,8 +73,8 @@ class Additive(Orderable, Protocol):
 
 class Weightable(Additive, Protocol):
     """Tipos usados como pesos de arestas, sendo ordenáveis
-    e têm adição definida"""
-    __slots__: List[str] = []
+    e têm adição definida
+    """
 
     def is_inf(self) -> bool:
         """Teste se o peso representa uma aresta não acessível,
