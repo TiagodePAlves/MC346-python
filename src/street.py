@@ -90,6 +90,7 @@ class Street(Weightable):
         return isinstance(other, Street) and self.time < other.time
 
     def __add__(self, other: Street) -> Street:
+        """A soma dos trechos equivale a soma dos tempos"""
         d1, d2 = self.distance, other.distance
         s1, s2 = self.speed, other.speed
 
@@ -104,6 +105,7 @@ class Street(Weightable):
         return repr(self.time)
 
     def __deepcopy__(self, memo: Dict[int, Any]) -> Street:
+        """Cópia especial que não mantém a velocidade assumida"""
         new = Street(self.distance, self._max_speed)
         new.register_speeds(*self._latest_speeds)
 
