@@ -43,7 +43,7 @@ autodoc_default_options = {
     'exclude-members': '__weakref__, __init__'
 }
 
-set_type_checking_flag = True
+set_type_checking_flag = False
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
