@@ -1,0 +1,2 @@
+.. automodule:: waze
+    :members:

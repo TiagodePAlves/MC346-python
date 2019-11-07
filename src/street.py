@@ -22,7 +22,7 @@ INCLUDE_MAX_SPEED = False
 @total_ordering
 class Street(Weightable):
     """
-    Classe de peso (:class:`~protocols.Weightable`) do trecho da rua
+    Classe de peso (:class:`Weightable`) do trecho da rua
 
     Assim que a propriedade :attr:`~street.Street.speed` é
     lida pela primeira vez, ela assume um valor que é mantido
