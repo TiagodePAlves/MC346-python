@@ -28,10 +28,10 @@ W = TypeVar('W', bound=Weightable)
 # as anotações de tipo
 PathHeap = MinHeap[Tuple[W, Node[K, W]]]
 ParentDict = Dict[Node[K, W], Node[K, W]]
-Path = Tuple[W, Tuple[Node[K, W], ...]]
+WeightPath = Tuple[W, Tuple[Node[K, W], ...]]
 
 
-def dijkstra(graph: Graph[K, W], source: K, destination: K) -> Optional[Path[W, K]]:
+def dijkstra(graph: Graph[K, W], source: K, destination: K) -> Optional[WeightPath[W, K]]:
     """Encontra o caminho ótimo entre dois nós
 
     :param graph: o grafo
