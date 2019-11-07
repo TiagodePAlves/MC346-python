@@ -1,14 +1,15 @@
 from __future__ import annotations
 
 from functools import total_ordering
-from typing import TypeVar, Hashable
-try:
-    from typing_extensions import Protocol, Literal
-except ModuleNotFoundError:
-    class Protocol: ...  # type: ignore
-    class Literal: ...   # type: ignore
+from typing import TypeVar, Hashable, TYPE_CHECKING
 
-__all__ = ["Comparable", "Orderable", "Additive", "Literal"]
+if TYPE_CHECKING:
+    from typing_extensions import Protocol, Literal
+else:
+    class Protocol: ...
+    class Literal: ...
+
+__all__ = ["Comparable", "Orderable", "Additive", "Weightable", "Literal"]
 
 
 
