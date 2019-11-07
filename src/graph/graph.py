@@ -12,8 +12,8 @@ from protocols import Keyable, Weightable
 from dataclasses import dataclass
 from typing import (
     TypeVar, Iterator, Optional,
-    Mapping, Dict, Any, Tuple,
-    TYPE_CHECKING, Generic
+    Mapping, Dict, Tuple, Generic,
+    TYPE_CHECKING
 )
 
 # tipos de chave e peso de aresta

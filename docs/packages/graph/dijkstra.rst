@@ -1,0 +1,2 @@
+.. automodule:: graph.dijkstra
+    :members:
