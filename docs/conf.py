@@ -38,6 +38,11 @@ extensions = [
 
 intersphinx_mapping = {'python': ('https://docs.python.org/3.7', None)}
 
+autodoc_default_options = {
+    'member-order': 'bysource',
+    'exclude-members': '__weakref__, __init__'
+}
+
 set_type_checking_flag = True
 
 # Add any paths that contain templates here, relative to this directory.

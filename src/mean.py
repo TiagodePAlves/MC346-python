@@ -19,10 +19,7 @@ class Mean:
     a nova média é tratada como a média da junção dos
     valores que compõe as duas médias.
 
-    Parameters
-    ----------
-    nums
-        valores iniciais na medida
+    :param nums:    valores iniciais na medida
     """
 
     def __init__(self, *nums: float):
@@ -37,13 +34,18 @@ class Mean:
         return self._sum / self._count
 
     def insert(self, *nums: float) -> None:
-        """Insere novos valores na média"""
+        """Insere novos valores na média
+
+        :param nums:
+        """
         self._sum += sum(nums)
         self._count += len(nums)
 
     def __iadd__(self, num: Union[float, Mean]) -> Mean:
         """Expansão da média com um :class:`float` ou um
         :class:`Mean`
+
+        :param num:
         """
         if isinstance(num, float):
             self.insert(num)
@@ -56,6 +58,8 @@ class Mean:
     def __add__(self, num: Union[float, Mean]) -> Mean:
         """Nova média expandida com um :class:`float` ou um
         :class:`Mean`
+
+        :param num:
         """
         if isinstance(num, float):
             new = Mean(num)

@@ -8,7 +8,7 @@ a checagem estática de tipo com o `mypy <https://mypy.readthedocs.io/>`_
 
 from __future__ import annotations
 
-from typing import TypeVar, Hashable, List, TYPE_CHECKING
+from typing import TypeVar, Hashable, TYPE_CHECKING
 
 if TYPE_CHECKING:
     from typing_extensions import Protocol, Literal
@@ -16,7 +16,11 @@ else:
     class Protocol: ...
     class Literal: ...
 
-__all__ = ["Comparable", "Orderable", "Keyable", "Additive", "Weightable", "Literal"]
+__all__ = [
+    "Comparable", "Orderable",
+    "Keyable", "Additive",
+    "Weightable", "Literal"
+]
 
 
 

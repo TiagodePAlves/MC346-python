@@ -32,12 +32,8 @@ class Street(Weightable):
     essa propriedade é desconfigurada e ela pode assumir um novo
     valor.
 
-    Parameters
-    ----------
-    distance
-        distância do trecho
-    max_speed
-        velocidade máxima do trecho
+    :param distance:    distância do trecho
+    :param max_speed:   velocidade máxima do trecho
     """
 
     def __init__(self, distance: float, max_speed: float):

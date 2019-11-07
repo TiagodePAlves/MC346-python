@@ -22,10 +22,7 @@ class MinHeap(Collection[Ord]):
     Heap de mínimo com as funções clássicas :func:`~heap.MinHeap.peek`,
     :func:`~heap.MinHeap.push` e :func:`~heap.MinHeap.pop`.
 
-    Parameters
-    ----------
-    items
-        valores iniciais do heap
+    :param items:   valores iniciais do heap
     """
     __slots__ = ['_list']
 
