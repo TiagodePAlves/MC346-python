@@ -3,7 +3,7 @@
 ===========
 
 Implementação de um `heap` de mínimo
-com a biblioteca ``heapq`` de Python
+com a biblioteca :mod:`heapq` de Python
 """
 
 from __future__ import annotations

@@ -3,7 +3,7 @@
 ================
 
 Protocolos de funcionamento das classes para
-a checagem estática de tipo com o ``mypy``
+a checagem estática de tipo com o `mypy <https://mypy.readthedocs.io/>`_
 """
 
 from __future__ import annotations

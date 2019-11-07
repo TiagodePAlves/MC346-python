@@ -32,8 +32,11 @@ release = '0.1.0'
 # ones.
 extensions = [
     'sphinx.ext.todo', 'sphinx.ext.viewcode', 'm2r',
-    'sphinx.ext.autodoc', 'sphinx_autodoc_typehints'
+    'sphinx.ext.autodoc', 'sphinx_autodoc_typehints',
+    'sphinx.ext.intersphinx'
 ]
+
+intersphinx_mapping = {'python': ('https://docs.python.org/3.7', None)}
 
 set_type_checking_flag = True
 
