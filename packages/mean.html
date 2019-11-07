@@ -1,0 +1,309 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="pt-BR" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="pt-BR" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mean.py &mdash; documentação MC346 - Python 0.1.0</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="protocols.py" href="protocols.html" />
+    <link rel="prev" title="main.py" href="main.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MC346 - Python
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Conteúdo:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../packages.html">Pacotes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="graph.html"><code class="docutils literal notranslate"><span class="pre">graph</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="heap.html"><code class="docutils literal notranslate"><span class="pre">heap.py</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html"><code class="docutils literal notranslate"><span class="pre">main.py</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">mean.py</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="protocols.html"><code class="docutils literal notranslate"><span class="pre">protocols.py</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="street.html"><code class="docutils literal notranslate"><span class="pre">street.py</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html"><code class="docutils literal notranslate"><span class="pre">utils.py</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="waze.html"><code class="docutils literal notranslate"><span class="pre">waze.py</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MC346 - Python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../packages.html">Pacotes</a> &raquo;</li>
+        
+      <li><code class="docutils literal notranslate"><span class="pre">mean.py</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/packages/mean.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="module-mean"></span><div class="section" id="mean-py">
+<h1><code class="docutils literal notranslate"><span class="pre">mean.py</span></code><a class="headerlink" href="#mean-py" title="Link permanente para este título">¶</a></h1>
+<p>Módulo com um tipo agregador da média de valores</p>
+<dl class="class">
+<dt id="mean.Mean">
+<em class="property">class </em><code class="sig-prename descclassname">mean.</code><code class="sig-name descname">Mean</code><span class="sig-paren">(</span><em class="sig-param">*nums</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mean.html#Mean"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#mean.Mean" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Classe que agrega valores em uma médida de média</p>
+<p>Quando adicionada com um <a class="reference external" href="https://docs.python.org/3.7/library/functions.html#float" title="(em Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, agrega ele
+na medida. Quando adicionada a outro <a class="reference internal" href="#mean.Mean" title="mean.Mean"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mean</span></code></a>,
+a nova média é tratada como a média da junção dos
+valores que compõe as duas médias.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parâmetros</dt>
+<dd class="field-odd"><p><strong>nums</strong> (<a class="reference external" href="https://docs.python.org/3.7/library/functions.html#float" title="(em Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – valores iniciais na medida</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="mean.Mean.average">
+<em class="property">property </em><code class="sig-name descname">average</code><a class="headerlink" href="#mean.Mean.average" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>A média propriamente</p>
+<dl class="field-list simple">
+<dt class="field-odd">Tipo de retorno</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#float" title="(em Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="mean.Mean.insert">
+<code class="sig-name descname">insert</code><span class="sig-paren">(</span><em class="sig-param">*nums</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mean.html#Mean.insert"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#mean.Mean.insert" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Insere novos valores na média</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parâmetros</dt>
+<dd class="field-odd"><p><strong>nums</strong> (<a class="reference external" href="https://docs.python.org/3.7/library/functions.html#float" title="(em Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – </p>
+</dd>
+<dt class="field-even">Tipo de retorno</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="mean.Mean.__iadd__">
+<code class="sig-name descname">__iadd__</code><span class="sig-paren">(</span><em class="sig-param">num</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mean.html#Mean.__iadd__"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#mean.Mean.__iadd__" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Expansão da média com um <a class="reference external" href="https://docs.python.org/3.7/library/functions.html#float" title="(em Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> ou um
+<a class="reference internal" href="#mean.Mean" title="mean.Mean"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mean</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parâmetros</dt>
+<dd class="field-odd"><p><strong>num</strong> (<a class="reference external" href="https://docs.python.org/3.7/library/typing.html#typing.Union" title="(em Python v3.7)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3.7/library/functions.html#float" title="(em Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference internal" href="#mean.Mean" title="mean.Mean"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mean</span></code></a>]) – </p>
+</dd>
+<dt class="field-even">Tipo de retorno</dt>
+<dd class="field-even"><p><a class="reference internal" href="#mean.Mean" title="mean.Mean"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mean</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="mean.Mean.__add__">
+<code class="sig-name descname">__add__</code><span class="sig-paren">(</span><em class="sig-param">num</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mean.html#Mean.__add__"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#mean.Mean.__add__" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Nova média expandida com um <a class="reference external" href="https://docs.python.org/3.7/library/functions.html#float" title="(em Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> ou um
+<a class="reference internal" href="#mean.Mean" title="mean.Mean"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mean</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parâmetros</dt>
+<dd class="field-odd"><p><strong>num</strong> (<a class="reference external" href="https://docs.python.org/3.7/library/typing.html#typing.Union" title="(em Python v3.7)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3.7/library/functions.html#float" title="(em Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference internal" href="#mean.Mean" title="mean.Mean"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mean</span></code></a>]) – </p>
+</dd>
+<dt class="field-even">Tipo de retorno</dt>
+<dd class="field-even"><p><a class="reference internal" href="#mean.Mean" title="mean.Mean"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mean</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="mean.Mean.__radd__">
+<code class="sig-name descname">__radd__</code><span class="sig-paren">(</span><em class="sig-param">num</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mean.html#Mean.__radd__"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#mean.Mean.__radd__" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Ordem invertida da expansão para um número</p>
+<dl class="field-list simple">
+<dt class="field-odd">Tipo de retorno</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#mean.Mean" title="mean.Mean"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mean</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="mean.Mean.__repr__">
+<code class="sig-name descname">__repr__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mean.html#Mean.__repr__"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#mean.Mean.__repr__" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Representação textual</p>
+<dl class="field-list simple">
+<dt class="field-odd">Tipo de retorno</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(em Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="protocols.html" class="btn btn-neutral float-right" title="protocols.py" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="main.html" class="btn btn-neutral float-left" title="main.py" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Tiago de Paula Alves
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

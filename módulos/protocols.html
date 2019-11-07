@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="pt-BR" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="pt-BR" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>protocols.py &mdash; documentação MC346 - Python 0.1.0</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MC346 - Python
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">protocols.py</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MC346 - Python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>protocols.py</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/módulos/protocols.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="module-protocols"></span><div class="section" id="protocols-py">
+<h1>protocols.py<a class="headerlink" href="#protocols-py" title="Link permanente para este título">¶</a></h1>
+<p>Protocolos de funcionamento das classes para
+a checagem estática de tipo com o <code class="docutils literal notranslate"><span class="pre">mypy</span></code></p>
+<dl class="class">
+<dt id="protocols.Comparable">
+<em class="property">class </em><code class="sig-prename descclassname">protocols.</code><code class="sig-name descname">Comparable</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/protocols.html#Comparable"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#protocols.Comparable" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Protocolo de classes que cujas instâncias são comparáveis</p>
+<dl class="method">
+<dt id="protocols.Comparable.__eq__">
+<code class="sig-name descname">__eq__</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/protocols.html#Comparable.__eq__"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#protocols.Comparable.__eq__" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>operadores <code class="docutils literal notranslate"><span class="pre">==</span></code> e <code class="docutils literal notranslate"><span class="pre">!=</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Tipo de retorno</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="protocols.Comparable.__weakref__">
+<code class="sig-name descname">__weakref__</code><a class="headerlink" href="#protocols.Comparable.__weakref__" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="protocols.Orderable">
+<em class="property">class </em><code class="sig-prename descclassname">protocols.</code><code class="sig-name descname">Orderable</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/protocols.html#Orderable"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#protocols.Orderable" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Protocolo para tipos ordenáveis por ordenação total</p>
+<dl class="method">
+<dt id="protocols.Orderable.__ge__">
+<code class="sig-name descname">__ge__</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/protocols.html#Orderable.__ge__"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#protocols.Orderable.__ge__" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>operador <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Tipo de retorno</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="protocols.Orderable.__gt__">
+<code class="sig-name descname">__gt__</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/protocols.html#Orderable.__gt__"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#protocols.Orderable.__gt__" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>operador <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Tipo de retorno</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="protocols.Orderable.__le__">
+<code class="sig-name descname">__le__</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/protocols.html#Orderable.__le__"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#protocols.Orderable.__le__" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>operador <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Tipo de retorno</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="protocols.Orderable.__lt__">
+<code class="sig-name descname">__lt__</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/protocols.html#Orderable.__lt__"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#protocols.Orderable.__lt__" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>operador <code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Tipo de retorno</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="protocols.Keyable">
+<em class="property">class </em><code class="sig-prename descclassname">protocols.</code><code class="sig-name descname">Keyable</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/protocols.html#Keyable"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#protocols.Keyable" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Classes que podem ser chaves, isto é, são comparáveis e podem
+ser geradas <cite>hashs</cite> a partir de suas instâncias</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="protocols.Additive">
+<em class="property">class </em><code class="sig-prename descclassname">protocols.</code><code class="sig-name descname">Additive</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/protocols.html#Additive"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#protocols.Additive" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Tipos com adição definida, além de serem ordenáveis</p>
+<dl class="method">
+<dt id="protocols.Additive.__add__">
+<code class="sig-name descname">__add__</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/protocols.html#Additive.__add__"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#protocols.Additive.__add__" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>operadores <code class="docutils literal notranslate"><span class="pre">+</span></code> e <code class="docutils literal notranslate"><span class="pre">+=</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Tipo de retorno</dt>
+<dd class="field-odd"><p>~A</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="protocols.Weightable">
+<em class="property">class </em><code class="sig-prename descclassname">protocols.</code><code class="sig-name descname">Weightable</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/protocols.html#Weightable"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#protocols.Weightable" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Tipos usados como pesos de arestas, sendo ordenáveis
+e têm adição definida</p>
+<dl class="method">
+<dt id="protocols.Weightable.is_inf">
+<code class="sig-name descname">is_inf</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/protocols.html#Weightable.is_inf"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#protocols.Weightable.is_inf" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Teste se o peso representa uma aresta não acessível,
+como <code class="docutils literal notranslate"><span class="pre">float('inf')</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Tipo de retorno</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Tiago de Paula Alves
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

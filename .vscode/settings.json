@@ -1,0 +1,10 @@
+{
+    "python.autoComplete.extraPaths": [
+        "src"
+    ],
+    "python.analysis.disabled": [
+        "inherit-non-class"
+    ],
+    "python.linting.mypyEnabled": true,
+    "restructuredtext.confPath": "${workspaceFolder}/docs"
+}

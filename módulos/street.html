@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="pt-BR" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="pt-BR" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>street.py &mdash; documentação MC346 - Python 0.1.0</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MC346 - Python
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">street.py</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MC346 - Python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>street.py</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/módulos/street.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="module-street"></span><div class="section" id="street-py">
+<h1>street.py<a class="headerlink" href="#street-py" title="Link permanente para este título">¶</a></h1>
+<p>Módulo para o peso de um trecho de rua</p>
+<dl class="data">
+<dt id="street.INCLUDE_MAX_SPEED">
+<code class="sig-prename descclassname">street.</code><code class="sig-name descname">INCLUDE_MAX_SPEED</code><em class="property"> = False</em><a class="headerlink" href="#street.INCLUDE_MAX_SPEED" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Incluir velocidade máxima entre as possibilidades
+de velocidade assumida naquele trecho de rua</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="street.Street">
+<em class="property">class </em><code class="sig-prename descclassname">street.</code><code class="sig-name descname">Street</code><span class="sig-paren">(</span><em class="sig-param">distance</em>, <em class="sig-param">max_speed</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/street.html#Street"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#street.Street" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Classe de peso do trecho da rua</p>
+<p>Assim que a propriedade <a class="reference internal" href="#street.Street.speed" title="street.Street.speed"><code class="xref py py-attr docutils literal notranslate"><span class="pre">speed</span></code></a> é
+lida pela primeira vez, ela assume um valor que é mantido
+com ela durante a vida do objeto.</p>
+<p>No entanto, quuando essa instância é copiada com <code class="docutils literal notranslate"><span class="pre">deepcopy</span></code>,
+essa propriedade é desconfigurada e ela pode assumir um novo
+valor.</p>
+<dl class="simple">
+<dt>distance</dt><dd><p>distância do trecho</p>
+</dd>
+<dt>max_speed</dt><dd><p>velocidade máxima do trecho</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="street.Street.distance">
+<em class="property">property </em><code class="sig-name descname">distance</code><a class="headerlink" href="#street.Street.distance" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>distância do trecho</p>
+<dl class="field-list simple">
+<dt class="field-odd">Tipo de retorno</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="street.Street.is_inf">
+<code class="sig-name descname">is_inf</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/street.html#Street.is_inf"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#street.Street.is_inf" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Se a velocidade assumida representa um tempo infinito</p>
+<dl class="field-list simple">
+<dt class="field-odd">Tipo de retorno</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="street.Street.register_speeds">
+<code class="sig-name descname">register_speeds</code><span class="sig-paren">(</span><em class="sig-param">*speeds</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/street.html#Street.register_speeds"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#street.Street.register_speeds" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Registra as velocidades atuais no trecho</p>
+<dl class="field-list simple">
+<dt class="field-odd">Tipo de retorno</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="street.Street.speed">
+<em class="property">property </em><code class="sig-name descname">speed</code><a class="headerlink" href="#street.Street.speed" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Velocidade assumida no trecho</p>
+<dl class="field-list simple">
+<dt class="field-odd">Tipo de retorno</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="street.Street.time">
+<em class="property">property </em><code class="sig-name descname">time</code><a class="headerlink" href="#street.Street.time" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>tempo no trecho, com a velocidade assumida</p>
+<p>Usado para a comparação entre trechos</p>
+<dl class="field-list simple">
+<dt class="field-odd">Tipo de retorno</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Tiago de Paula Alves
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

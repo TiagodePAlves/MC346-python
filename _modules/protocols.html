@@ -1,0 +1,276 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="pt-BR" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="pt-BR" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>protocols &mdash; documentação MC346 - Python 0.1.0</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MC346 - Python
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Conteúdo:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../packages.html">Pacotes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MC346 - Python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Código do módulo</a> &raquo;</li>
+        
+      <li>protocols</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Código fonte para protocols</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">``protocols.py``</span>
+<span class="sd">================</span>
+
+<span class="sd">Protocolos de funcionamento das classes para</span>
+<span class="sd">a checagem estática de tipo com o `mypy &lt;https://mypy.readthedocs.io/&gt;`_</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">TypeVar</span><span class="p">,</span> <span class="n">Hashable</span><span class="p">,</span> <span class="n">TYPE_CHECKING</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">typing_extensions</span> <span class="k">import</span> <span class="n">Protocol</span><span class="p">,</span> <span class="n">Literal</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">class</span> <span class="nc">Protocol</span><span class="p">:</span> <span class="o">...</span>
+    <span class="k">class</span> <span class="nc">Literal</span><span class="p">:</span> <span class="o">...</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Comparable&quot;</span><span class="p">,</span> <span class="s2">&quot;Orderable&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Keyable&quot;</span><span class="p">,</span> <span class="s2">&quot;Additive&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Weightable&quot;</span><span class="p">,</span> <span class="s2">&quot;Literal&quot;</span>
+<span class="p">]</span>
+
+
+
+<span class="c1"># tipo que é comparável com seu próprio tipo</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="s1">&#39;Comparable&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Comparable"><a class="viewcode-back" href="../packages/protocols.html#protocols.Comparable">[documentos]</a><span class="k">class</span> <span class="nc">Comparable</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Protocolo de classes que cujas instâncias são comparáveis&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Comparable.__eq__"><a class="viewcode-back" href="../packages/protocols.html#protocols.Comparable.__eq__">[documentos]</a>    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">C</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">C</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;operadores ``==`` e ``!=``&quot;&quot;&quot;</span>
+        <span class="o">...</span></div></div>
+
+
+<div class="viewcode-block" id="Keyable"><a class="viewcode-back" href="../packages/protocols.html#protocols.Keyable">[documentos]</a><span class="k">class</span> <span class="nc">Keyable</span><span class="p">(</span><span class="n">Comparable</span><span class="p">,</span> <span class="n">Hashable</span><span class="p">,</span> <span class="n">Protocol</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Classes que podem ser chaves, isto é, são comparáveis e podem</span>
+<span class="sd">    ser geradas `hashs` a partir de suas instâncias</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="o">...</span></div>
+
+
+<span class="c1"># tipo que é ordenável em relação ao seu próprio tipo</span>
+<span class="n">Ord</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s1">&#39;Ord&#39;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="s1">&#39;Orderable&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Orderable"><a class="viewcode-back" href="../packages/protocols.html#protocols.Orderable">[documentos]</a><span class="k">class</span> <span class="nc">Orderable</span><span class="p">(</span><span class="n">Comparable</span><span class="p">,</span> <span class="n">Protocol</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Protocolo para tipos ordenáveis por ordenação total&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Orderable.__lt__"><a class="viewcode-back" href="../packages/protocols.html#protocols.Orderable.__lt__">[documentos]</a>    <span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">Ord</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Ord</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;operador ``&lt;``&quot;&quot;&quot;</span>
+        <span class="o">...</span></div>
+
+<div class="viewcode-block" id="Orderable.__le__"><a class="viewcode-back" href="../packages/protocols.html#protocols.Orderable.__le__">[documentos]</a>    <span class="k">def</span> <span class="nf">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">Ord</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Ord</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;operador ``&lt;=``&quot;&quot;&quot;</span>
+        <span class="o">...</span></div>
+
+<div class="viewcode-block" id="Orderable.__gt__"><a class="viewcode-back" href="../packages/protocols.html#protocols.Orderable.__gt__">[documentos]</a>    <span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">Ord</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Ord</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;operador ``&gt;``&quot;&quot;&quot;</span>
+        <span class="o">...</span></div>
+
+<div class="viewcode-block" id="Orderable.__ge__"><a class="viewcode-back" href="../packages/protocols.html#protocols.Orderable.__ge__">[documentos]</a>    <span class="k">def</span> <span class="nf">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">Ord</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Ord</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;operador ``&gt;=``&quot;&quot;&quot;</span>
+        <span class="o">...</span></div></div>
+
+
+<span class="c1"># tipo que tem adição com outros de seu tipo</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="s1">&#39;Additive&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Additive"><a class="viewcode-back" href="../packages/protocols.html#protocols.Additive">[documentos]</a><span class="k">class</span> <span class="nc">Additive</span><span class="p">(</span><span class="n">Orderable</span><span class="p">,</span> <span class="n">Protocol</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Tipos com adição definida, além de serem ordenáveis&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Additive.__add__"><a class="viewcode-back" href="../packages/protocols.html#protocols.Additive.__add__">[documentos]</a>    <span class="k">def</span> <span class="nf">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">A</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">A</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">A</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;operadores ``+`` e ``+=``&quot;&quot;&quot;</span>
+        <span class="o">...</span></div></div>
+
+
+<div class="viewcode-block" id="Weightable"><a class="viewcode-back" href="../packages/protocols.html#protocols.Weightable">[documentos]</a><span class="k">class</span> <span class="nc">Weightable</span><span class="p">(</span><span class="n">Additive</span><span class="p">,</span> <span class="n">Protocol</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Tipos usados como pesos de arestas, sendo ordenáveis</span>
+<span class="sd">    e têm adição definida</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Weightable.is_inf"><a class="viewcode-back" href="../packages/protocols.html#protocols.Weightable.is_inf">[documentos]</a>    <span class="k">def</span> <span class="nf">is_inf</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Teste se o peso representa uma aresta não acessível,</span>
+<span class="sd">        como ``float(&#39;inf&#39;)``&quot;&quot;&quot;</span>
+        <span class="o">...</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Tiago de Paula Alves
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
