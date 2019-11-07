@@ -13,7 +13,7 @@ HTML_TMP := html
 .PHONY: run doc doc_server docs clean publish_docs check $(HTML_TMP)
 
 run: $(SRC_DIR)
-	@$(PYTHON) -m $<
+	@env PYTHONPATH='$<' $(PYTHON) -m $<
 
 docs:
 	@make -C $(DOCS_DIR) html
