@@ -1,6 +1,6 @@
 """
-protocols.py
-============
+``protocols.py``
+================
 
 Protocolos de funcionamento das classes para
 a checagem estática de tipo com o ``mypy``

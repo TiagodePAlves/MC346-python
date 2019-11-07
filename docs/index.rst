@@ -3,15 +3,14 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-MC346 - Projeto de Python
-=========================
+.. mdinclude:: ../README.md
 
 .. toctree::
     :glob:
     :maxdepth: 2
     :caption: Conteúdo:
 
-    packages/*
+    packages
 
 
 Indíces e tabelas

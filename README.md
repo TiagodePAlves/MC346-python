@@ -2,6 +2,7 @@
 
 ## Alunos
 
+- [João Victor Flores da Costa](mailto:j199818@dac.unicamp.br) (199818)
 - [Tiago de Paula Alves](mailto:t187679@dac.unicamp.br) (187679)
 
 ## Enunciado do Projeto
@@ -10,7 +11,7 @@
 
 Os dados tem a seguinte forma:
 
-```raw
+```text
 25.0
 aa b 0.4
 aa c 0.5 50.0
@@ -46,7 +47,7 @@ Para os dois caminhos, imprima o tempo de transito **em minutos** com 1 casa dec
 
 Por exemplo:
 
-```raw
+```text
 18.6
 a b d e g z
 ```

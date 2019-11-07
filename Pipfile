@@ -10,6 +10,7 @@ typeshed = "*"
 sphinx = "*"
 sphinx_rtd_theme = "*"
 sphinx-autodoc-typehints = "*"
+m2r = "*"
 
 [packages]
 
