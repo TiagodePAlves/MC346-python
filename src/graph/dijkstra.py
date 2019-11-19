@@ -82,7 +82,7 @@ def dijkstra(graph: Graph[K, W], source: K, destination: K) -> Optional[WeightPa
         # senão, tenta adicionar a vizinhaça do nó
         for edge_weight, neighbor in node.edges():
             if neighbor not in visited:
-                push(edge_weight, neighbor, node)
+                push(weight + edge_weight, neighbor, node)
         # e marca como visitado
         visited.add(node)
 
