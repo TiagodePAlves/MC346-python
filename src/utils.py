@@ -56,6 +56,7 @@ def run_many(func: Callable[[T], U], arg: T, runs: int, *,
     if not PARALLEL:
         for value in map(func, repeat(arg, runs)):
             yield value
+        return
 
     with Pool(POOLSIZE) as p:
         results = p.imap_unordered(func, repeat(arg, runs), CHUNKSIZE)

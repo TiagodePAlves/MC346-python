@@ -100,7 +100,7 @@ def aggregate(items: Iterable[Result]) -> Tuple[DefaultDict[Path, Mean], int]:
     return results, errors
 
 
-def main(RUNS: int = 100, PARALLEL: bool = True, *,
+def main(RUNS: int = 100, PARALLEL: bool = False, *,
          infile: Union[TextIO, str] = sys.stdin,
          outfile: TextIO = sys.stdout
          ) -> None:
