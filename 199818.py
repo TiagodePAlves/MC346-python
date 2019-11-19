@@ -358,7 +358,7 @@ def dijkstra(graph: Graph[K, W], source: K, destination: K) -> Optional[WeightPa
         # senão, tenta adicionar a vizinhaça do nó
         for edge_weight, neighbor in node.edges():
             if neighbor not in visited:
-                push(edge_weight, neighbor, node)
+                push(weight + edge_weight, neighbor, node)
         # e marca como visitado
         visited.add(node)
 
@@ -563,6 +563,7 @@ def run_many(func: Callable[[T], U], arg: T, runs: int, *,
     if not PARALLEL:
         for value in map(func, repeat(arg, runs)):
             yield value
+        return
 
     with Pool(POOLSIZE) as p:
         results = p.imap_unordered(func, repeat(arg, runs), CHUNKSIZE)
@@ -720,7 +721,7 @@ def aggregate(items: Iterable[Result]) -> Tuple[DefaultDict[Path, Mean], int]:
     return results, errors
 
 
-def main(RUNS: int = 100, PARALLEL: bool = True, *,
+def main(RUNS: int = 100, PARALLEL: bool = False, *,
          infile: Union[TextIO, str] = sys.stdin,
          outfile: TextIO = sys.stdout
          ) -> None:
