@@ -10,10 +10,10 @@ from __future__ import annotations
 from graph import dijkstra
 from waze import Waze
 from mean import Mean
+from utils import uncurry, run_many
 
 import sys
 from heapq import nsmallest
-from utils import uncurry, run_many
 from operator import attrgetter
 from copy import deepcopy
 from typing import (
@@ -104,7 +104,7 @@ def main(RUNS: int = 100, PARALLEL: bool = True, *,
          infile: Union[TextIO, str] = sys.stdin,
          outfile: TextIO = sys.stdout
          ) -> None:
-    """função principal que resolve o grafo vária vezes"""
+    """função principal que resolve o grafo várias vezes"""
 
     # abre o arquivo de leitura, se necessário
     if isinstance(infile, str):
