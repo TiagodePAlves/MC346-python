@@ -1,2 +1,0 @@
-.. automodule:: street
-    :members:
